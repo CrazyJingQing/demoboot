@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.mapper.UserMapper">
+    <select id="searchUser" resultType="com.cy.bean.Tbluser">
+        select * from tbluser where userAcc =#{userAcc}
+    </select>
+    <insert id="addUser" parameterType="com.cy.bean.Tbluser">
+        insert  into tbluser (userAcc,userPwd,userImgUrl,userName)
+        values(#{userAcc},#{userPwd},#{userImgUrl},#{userName})
+    </insert>
+    <select id="searchUserList" resultType="com.cy.bean.Tbluser">
+        select  * from  tbluser
+    </select>
+    <select id="searchUserListLimit" resultType="com.cy.bean.Tbluser">
+        select  * from  tbluser limit #{startRow},#{pageSize}
+    </select>
+    <delete id="delUser" parameterType="com.cy.bean.Tbluser">
+        delete from tbluser where userAcc =#{userAcc}
+    </delete>
+    <update id="modifyUser" parameterType="com.cy.bean.Tbluser">
+        update tbluser set userName = #{userName},userPwd = #{userPwd},userImgUrl = #{userImgUrl}
+         where userAcc = #{userAcc}
+    </update>
+    <select id="doLogin" resultType="com.cy.bean.Tbluser">
+        select * from  tbluser where userAcc=#{userAcc} and userPwd=#{userPwd}
+    </select>
+    <update id="newModifyUser" parameterType="com.cy.bean.Tbluser">
+        update tbluser set userName = #{userName},userPwd = #{userPwd} where userAcc = #{userAcc}
+    </update>
+    <insert id="newAddUser" parameterType="com.cy.bean.Tbluser">
+        insert  into tbluser (userAcc,userPwd,userName)
+        values(#{userAcc},#{userPwd},#{userName})
+    </insert>
+</mapper>

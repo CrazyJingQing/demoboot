@@ -1,0 +1,13 @@
+#server port
+server:
+  port: 8888
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  datasource:
+    url:
+    driver-class-name: com.mysql.jdbc.Driver
+    username:
+    password:
+
+#server.tomcat.url-encoding=utf-8
