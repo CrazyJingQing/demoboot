@@ -10,7 +10,7 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
         System.out.println("http://localhost:8888");
-        System.out.println("吃饭");
+        System.out.println("不吃饭");
     }
 
 }
